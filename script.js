@@ -3,7 +3,8 @@ const addBtn = document.querySelector("#btnAdd");
 const addBtnMobile = document.querySelector("#btnAddMobile");
 const showBtn = document.querySelector("#showAdd");
 const listGroup = document.querySelector("ul");
-console.log(addBtn);
+const divTasks = document.querySelector("#accordionItemContent");
+console.log(divTasks);
 
 
 /**
@@ -65,6 +66,12 @@ function createTask() {
   newLi.appendChild(newInput);
   newLi.appendChild(newLabel);
   listGroup.appendChild(newLi);
+  if (divTasks.classList.contains("close")) {
+    divTasks.classList.remove("close");
+    divTasks.classList.add("open");
+    divTasks.classList.add("animate__backOutDown");
+    showBtn.textContent = "HIDE TASK'S";
+  }
 
   
   //TOAST ADD
@@ -96,7 +103,7 @@ function showTask(e) {
   if (divParent.classList.contains("close")) {
     divParent.classList.remove("close");
     divParent.classList.add("open");
-    divParent.classList.add("animate__backInDown");
+    divParent.classList.add("animate__backOutDown");
     showBtn.textContent = "HIDE TASK'S";
   } else {
     divParent.classList.remove("open");
