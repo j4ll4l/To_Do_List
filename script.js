@@ -48,6 +48,7 @@ function createTask() {
   //Creation des elements  // Création des éléments pour la tâche  const newLi = document.createElement("li");
   const newInput = document.createElement("input");
   const newLabel = document.createElement("label");
+  const newLi = document.createElement("li");
 
 
   // Attributs pour les éléments
